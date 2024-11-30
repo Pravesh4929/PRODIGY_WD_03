@@ -1,0 +1,106 @@
+:root {
+    --light-bg: #f0f0f0;
+    --light-text: #333;
+    --dark-bg: #333;
+    --dark-text: #f0f0f0;
+    --cell-light-color: #333;
+    --cell-dark-color: #f0f0f0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.container {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0 0 20px;
+}
+
+.theme-toggle {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-size: 1em;
+    transition: color 0.3s;
+    border-radius: 25px;
+}
+
+.player-input {
+    margin-bottom: 20px;
+}
+
+.player-input input {
+    padding: 10px;
+    margin: 5px;
+    width: calc(100% - 24px);
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.cell {
+    background: var(--light-bg);
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    cursor: pointer;
+    border: 2px solid var(--light-text);
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-theme .cell {
+    background: var(--dark-bg);
+    border-color: var(--dark-text);
+}
+
+body.dark-theme .cell.filled {
+    color: var(--cell-dark-color);
+}
+
+.cell.filled {
+    color: var(--cell-light-color);
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid currentColor;
+    color: inherit;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+
+.status {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
